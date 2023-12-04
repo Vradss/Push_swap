@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/11/21 19:06:06 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/11/29 17:55:53 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,18 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
+//#include "src/libft.h"
 
 /*----------------Main----------------*/
 
-struct node{
-	int data;
-	struct node *link;
-};
+typedef struct stack_node{
+	int					data;
+	struct stack_node 	*link;
+}	t_stack_node;
+
+/*Handle erros*/
+int	check_limits(t_stack_node **stack);
+int	check_duplicate(t_stack_node **stack);
+int	check_str(char *str);
 
 #endif
