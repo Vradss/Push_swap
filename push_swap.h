@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/11/29 17:55:53 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/13 20:39:31 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,23 @@
 #include <limits.h>
 #include <unistd.h>
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
-//#include "src/libft.h"
+#include "src/libft.h"
 
 /*----------------Main----------------*/
 
 typedef struct stack_node{
 	int					data;
-	struct stack_node 	*link;
+	struct stack_node 	*next;
 }	t_stack_node;
 
 /*Handle erros*/
 int	check_limits(t_stack_node **stack);
 int	check_duplicate(t_stack_node **stack);
 int	check_str(char *str);
+
+/*Error & free stacks*/
+void	ft_error(int error);
+void	ft_free(t_stack_node *stack);
 
 #endif

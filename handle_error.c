@@ -6,11 +6,13 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/04 18:57:01 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/13 14:03:02 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 /*Function checks data int_limits */
 int	check_limits(t_stack_node **stack)
@@ -25,7 +27,7 @@ int	check_limits(t_stack_node **stack)
 			free(newnode);
 			return (printf("Error\n"),0);
 		}
-		newnode->link = newnode;
+		newnode->next = newnode;
 	}
 	free(newnode);
 	return (1);
@@ -39,7 +41,7 @@ int	check_duplicate(t_stack_node **stack)
 	newnode = *stack ;
 	if (check_limits(stack) != '\0')
 		return (0);
-	duplicate = newnode->link;
+	duplicate = newnode->next;
 	while(newnode && duplicate)
 	{
 		while(duplicate != NULL)
@@ -48,19 +50,12 @@ int	check_duplicate(t_stack_node **stack)
 			{
 				return (printf("Error with data\n"),0);
 			}
-			duplicate = duplicate->link;
+			duplicate = duplicate->next;
 		}
-		duplicate = newnode->link;
+		duplicate = newnode->next;
 	}
 	return (1);
 }
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
 
 /*Function checks if the argument is any character is a digit or not*/
 int	check_str(char *str)

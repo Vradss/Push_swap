@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:29 by vflorez           #+#    #+#             */
-/*   Updated: 2023/11/23 16:29:58 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/13 13:48:46 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ struct node *add_node_end(struct node *ptr, int data)
 	struct node *temp = malloc(sizeof(struct node));
 	
 	temp->data = data;
-	temp->link = NULL;
+	temp->next = NULL;
 
-	ptr->link = temp;
+	ptr->next = temp;
 	return (temp);
 }
 
@@ -29,9 +29,9 @@ void	**add_node_beginning(struct node **head, int data)
 {
 	struct node *ptr = malloc(sizeof(struct node));
 	ptr->data = data;
-	ptr->link = NULL;
+	ptr->next = NULL;
 
-	ptr->link = *head;
+	ptr->next = *head;
 	*head = ptr;
 }
 
@@ -40,7 +40,7 @@ int main()
 	//Create the first node
 	struct node *head = malloc(sizeof(struct node));
 	head->data = 45;
-	head->link = NULL;
+	head->next = NULL;
 	
 	struct node *ptr = head;
 	ptr = add_node_end(ptr,98);
@@ -54,7 +54,7 @@ int main()
 	while(ptr != NULL)
 	{
 		printf("Data: %d\n", ptr->data);
-		ptr = ptr ->link;
+		ptr = ptr ->next;
 	}
 return 0;
 }
