@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
+#    By: vradis <vradis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/11 12:42:50 by vflorez           #+#    #+#              #
-#    Updated: 2023/10/31 12:59:22 by vflorez          ###   ########.fr        #
+#    Updated: 2023/12/16 14:38:59 by vradis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRC = ft_printf.c\
 OBJ = $(SRC:.c=.o)
 
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(INCLUDES)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(BLUE) printf --> Created & compiled 👀$(END)"
 

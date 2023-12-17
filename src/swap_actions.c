@@ -6,13 +6,13 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:26:11 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/14 11:17:19 by vradis           ###   ########.fr       */
+/*   Updated: 2023/12/17 14:21:02 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*Function swap top two numbers in Stack A*/
+/*Function swap top 2 numbers in Stack A*/
 void	ft_sa(t_stack_node **stack_a)
 {
 	t_stack_node	*ptr;
@@ -25,7 +25,7 @@ void	ft_sa(t_stack_node **stack_a)
 		(*stack_a)->next = ptr;
 		ft_printf("sa\n");
 	}
-	return(ft_printf("it doesn't work swap a"));
+	//return(ft_printf("it doesn't work swap a"));
 }
 
 /*Function swap top 2 numbers in Stack B*/
@@ -41,7 +41,7 @@ void	ft_sb(t_stack_node **stack_b)
 		(*stack_b)->next = ptr;
 		ft_printf("sb\n");
 	}
-	return(ft_printf("it doesn't work swap b"));
+	//return(ft_printf("it doesn't work swap b"));
 }
 
 /*Function that runs ft_sa and ft_sb at the same time*/

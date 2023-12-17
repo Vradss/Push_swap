@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
+#    By: vradis <vradis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:28:00 by vflorez           #+#    #+#              #
-#    Updated: 2023/11/23 16:43:01 by vflorez          ###   ########.fr        #
+#    Updated: 2023/12/17 14:20:10 by vradis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ NAME_PROJECT = push_swap
 
 #Sources
 SRC_DIR = src
-SRC_FILES = push_swap.c\
-			push_swap.utils.c\
-			
-
-
+SRC_FILES = src/swap_actions.c\
+			src/stack_utils.c\
+			src/main.c\
+			src/error.c 
+	
 LIBFT = $(SRC_DIR)/libft
 PRINTF = $(SRC_DIR)/Printf
 
@@ -38,26 +38,28 @@ CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
 LINKFLAGS = -L./$(LIBFT) -lft -L./$(PRINTF) -lftprintf
 
 #Objects
-OBJ_DIR = $(SRC_FILES:.c=.o)
+OBJ_DIR = obj
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
+
 
 #Rules
 all: $(NAME_PROJECT)
 
-$(NAME_PROJECT) : $(OBJ)
+$(NAME_PROJECT) : $(OBJ_FILES)
 	@$(MAKE) -C $(LIBFT)
 	@$(MAKE) -C $(PRINTF)
-	@$(CC) $(CFLAGS) $(LINKFLAGS) -o $(NAME_PROJECT)
+	@$(CC) $(CFLAGS) -o $(NAME_PROJECT) $(OBJ_FILES) $(LINKFLAGS)
 	@echo "$(BLUE) $(NAME_PROJECT) --> Created & compiled 👀$(END)"
 
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I./includes -c $< -o $@
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 clean:
-	@rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_FILES)
 	@$(MAKE) clean -C $(LIBFT)
 	@$(MAKE) clean -C $(PRINTF)
 	@echo "$(GREEN) All .o files deleted 💀💀 $(END)"

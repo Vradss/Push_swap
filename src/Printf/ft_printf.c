@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:49:55 by vflorez           #+#    #+#             */
-/*   Updated: 2023/10/30 17:00:21 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/16 14:42:49 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	ft_interpret(char format, va_list args)
 		return (ft_putstr(va_arg(args, char *)));
 	else if (format == 'p')
 		return (ft_pointer(va_arg(args, void *)));
-	else if (format == 'd' | format == 'i')
+	else if (format == 'd' || format == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == 'u')
 		return (ft_num_unsig(va_arg(args, unsigned int)));
