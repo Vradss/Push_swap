@@ -6,7 +6,7 @@
 #    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:28:00 by vflorez           #+#    #+#              #
-#    Updated: 2023/12/18 17:26:55 by vflorez          ###   ########.fr        #
+#    Updated: 2023/12/19 12:47:55 by vflorez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC_FILES = src/swap_actions.c\
 			src/reverse_rot_actions.c\
 			src/stack_utils.c\
 			src/main.c\
-			src/error.c\
+			src/free.c\
 			src/sort_3.c\
 			src/handle_args.c
 	

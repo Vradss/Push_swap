@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/18 19:12:24 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/19 17:33:03 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ void	ft_free(t_stack_node *stack);
 /*Stacks Utils*/
 int		stack_size(t_stack_node *stack);
 void	*add_node_end(t_stack_node **stack, t_stack_node *newnode);
-void	printStack(const char *name, t_stack_node* stack); 
+void	printStack(const char *name, t_stack_node* stack);
 void	add_data(t_stack_node **stack, int data);
 void	ft_stack_organized(t_stack_node *stack);
+void	ft_node_index(t_stack_node	**stack_a, int data);
 
 
-/*Actions allowed*/
+/*Actions allowed*/	
 void	ft_sa(t_stack_node **stack_a);
 void	ft_sb(t_stack_node **stack_b);
 void	ft_ss(t_stack_node **stack_a, t_stack_node **stack_b);

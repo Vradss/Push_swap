@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:06:07 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/18 17:37:40 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/19 17:49:33 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
 	while (i < argc)
 	{
 		int value = ft_atoi(argv[i]);
-		add_data(&stack_a, value);
+		ft_node_index(&stack_a, value);
 		if(!check_limits(&stack_a) || !check_duplicate(&stack_a) || !check_str(argv[i]))
 		{
 			ft_printf("invalid input");
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 
 	printStack("Inicial A", stack_a);
 
-	ft_stack_organized(stack_a);
+	ft_sort_3(&stack_a);
 
 	printStack("Final A", stack_a);
 	ft_free(stack_a);
