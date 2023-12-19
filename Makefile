@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vradis <vradis@student.42.fr>              +#+  +:+       +#+         #
+#    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:28:00 by vflorez           #+#    #+#              #
-#    Updated: 2023/12/17 14:20:10 by vradis           ###   ########.fr        #
+#    Updated: 2023/12/18 17:26:55 by vflorez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,13 @@ NAME_PROJECT = push_swap
 #Sources
 SRC_DIR = src
 SRC_FILES = src/swap_actions.c\
+			src/rotate_actions.c\
+			src/reverse_rot_actions.c\
 			src/stack_utils.c\
 			src/main.c\
-			src/error.c 
+			src/error.c\
+			src/sort_3.c\
+			src/handle_args.c
 	
 LIBFT = $(SRC_DIR)/libft
 PRINTF = $(SRC_DIR)/Printf

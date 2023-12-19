@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_error.c                                     :+:      :+:    :+:   */
+/*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/13 14:03:02 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/18 19:35:59 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "ft_printf.h"
-#include "libft.h"
 
 /*Function checks data int_limits */
 int	check_limits(t_stack_node **stack)
 {
 	t_stack_node	*newnode;
-	newnode = malloc(sizeof(t_stack_node));
-	*stack = newnode;
-	while(newnode)
+	newnode = *stack;
+	while(newnode != NULL)
 	{
-		if(newnode->data > INT_MAX || newnode->data < INT_MIN)
+		if(newnode->data >= 2147483647 || newnode->data < -2147483647)
 		{
-			free(newnode);
-			return (printf("Error\n"),0);
+			return (ft_printf("Error with limits\n"),0);
 		}
-		newnode->next = newnode;
+		newnode = newnode->next;
 	}
 	free(newnode);
 	return (1);
@@ -38,21 +34,21 @@ int	check_duplicate(t_stack_node **stack)
 {
 	t_stack_node	*newnode;
 	t_stack_node	*duplicate;
-	newnode = *stack ;
-	if (check_limits(stack) != '\0')
+	newnode = *stack;
+	if (check_limits(stack) != 1 || newnode == NULL)
 		return (0);
 	duplicate = newnode->next;
-	while(newnode && duplicate)
+	while(newnode != NULL)
 	{
 		while(duplicate != NULL)
 		{
 			if(newnode->data == duplicate->data)
 			{
-				return (printf("Error with data\n"),0);
+				return (ft_printf("Error with duplicates\n"),0);
 			}
 			duplicate = duplicate->next;
 		}
-		duplicate = newnode->next;
+		newnode = newnode->next;
 	}
 	return (1);
 }
@@ -68,11 +64,8 @@ int	check_str(char *str)
 		if (str[i] == '+' || str[i] == '-')
 			i++;
 		if (ft_isdigit(str[i]) == 0)
-			return (printf("Error pendejo\n"),0);
+			return (ft_printf("Error pendex\n"),0);
 		i++;
 	}
 	return (1);
 }
-
-
-

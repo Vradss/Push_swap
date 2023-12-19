@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/17 14:15:12 by vradis           ###   ########.fr       */
+/*   Updated: 2023/12/18 17:38:04 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	*add_node_end(t_stack_node **stack, t_stack_node *newnode)
 	*stack = newnode;
 }*/
 
-/*Function that print stacks*/
+/*Function that prints stacks*/
 void	printStack(const char *name, t_stack_node* stack) 
 {
 	ft_printf("Stack %s: ", name);
@@ -76,4 +76,24 @@ void	add_data(t_stack_node **stack, int data)
 	newnode->data = data;
 	newnode->next = *stack;
 	*stack = newnode;
+}
+
+
+/*Function that checks if the numbers in the stack are organized
+from smallest to largest
+Return 1 = Organized
+Return 0 = Not Organized*/
+
+void	ft_stack_organized(t_stack_node *stack)
+{
+	t_stack_node	*ptr;
+
+	ptr = stack;
+	while(ptr != NULL)
+	{
+		if(ptr->next != NULL && ptr->index > ptr->next->index)
+				ft_printf("stack is not organized\n");
+			ptr = ptr->next;
+	}
+	ft_printf("stack is organized\n");
 }
