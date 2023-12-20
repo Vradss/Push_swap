@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/19 17:47:59 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/20 18:25:17 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,33 +50,19 @@ void	*add_node_end(t_stack_node **stack, t_stack_node *newnode)
 	return (newnode);
 }
 
-/*Add node at the beginning of the stack*/
-/*void	*add_node_beginning(t_stack_node **stack, t_stack_node *newnode)
-{
-	newnode->next = *stack;
-	*stack = newnode;
-}*/
 
 /*Function that prints stacks*/
 void	printStack(const char *name, t_stack_node* stack) 
 {
 	ft_printf("Stack %s: ", name);
-    while (stack != NULL) {
-        ft_printf("data: %d\n -> ", stack->data);
-		ft_printf("index : %d\n -> ", stack->index);
-        stack = stack->next;
-    }
-    ft_printf("NULL\n");
+	while (stack != NULL) {
+		ft_printf("%d -> ", stack->data);
+		//ft_printf("index : %d -> ", stack->index);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
 }
 
-void	add_data(t_stack_node **stack, int data)
-{
-	t_stack_node	*newnode;
-	newnode = malloc(sizeof(t_stack_node));
-	newnode->data = data;
-	newnode->next = *stack;
-	*stack = newnode;
-}
 
 /*Function creates a new node to add in stack and 
 initialize the alias index in 1 */
@@ -133,7 +119,7 @@ from smallest to largest
 Return 1 = Organized
 Return 0 = Not Organized*/
 
-void	ft_stack_organized(t_stack_node *stack)
+int	ft_stack_organized(t_stack_node *stack)
 {
 	t_stack_node	*ptr;
 
@@ -144,6 +130,6 @@ void	ft_stack_organized(t_stack_node *stack)
 			ft_printf("stack is not organized\n");
 		ptr = ptr->next;
 	}
-	ft_printf("stack is organized\n");
+	return(0);
 }
 

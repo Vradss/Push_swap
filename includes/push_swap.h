@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/19 17:33:03 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/20 17:58:15 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ typedef struct stack_node{
 }	t_stack_node;
 
 /*Handle erros in argvs*/
-int	check_limits(t_stack_node **stack);
-int	check_duplicate(t_stack_node **stack);
-int	check_str(char *str);
+int		check_limits(t_stack_node **stack);
+int		check_duplicate(t_stack_node **stack);
+int		check_str(char *str);
+void	ft_handle_parsing(char *str, t_stack_node **stack_a);
 
 /*Error & free stacks*/
 void	ft_free(t_stack_node *stack);
@@ -39,8 +40,7 @@ void	ft_free(t_stack_node *stack);
 int		stack_size(t_stack_node *stack);
 void	*add_node_end(t_stack_node **stack, t_stack_node *newnode);
 void	printStack(const char *name, t_stack_node* stack);
-void	add_data(t_stack_node **stack, int data);
-void	ft_stack_organized(t_stack_node *stack);
+int		ft_stack_organized(t_stack_node *stack);
 void	ft_node_index(t_stack_node	**stack_a, int data);
 
 
@@ -62,5 +62,6 @@ void	ft_pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 /*Sort numbers*/
 void	ft_sort_3(t_stack_node **stack);
+void	ft_sort_all(t_stack_node **stack_a);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:28:00 by vflorez           #+#    #+#              #
-#    Updated: 2023/12/19 12:47:55 by vflorez          ###   ########.fr        #
+#    Updated: 2023/12/20 17:52:28 by vflorez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC_FILES = src/swap_actions.c\
 			src/main.c\
 			src/free.c\
 			src/sort_3.c\
-			src/handle_args.c
+			src/handle_args.c\
+			src/sort_all.c 
 	
 LIBFT = $(SRC_DIR)/libft
 PRINTF = $(SRC_DIR)/Printf
