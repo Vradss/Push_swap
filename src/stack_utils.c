@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/20 18:25:17 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/21 15:43:39 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,13 @@ int	ft_stack_organized(t_stack_node *stack)
 	while(ptr != NULL)
 	{
 		if(ptr->next != NULL && ptr->index > ptr->next->index)
-			ft_printf("stack is not organized\n");
+		{
+			ft_printf("Stack is not organized\n");
+			return (0);
+		}
 		ptr = ptr->next;
 	}
-	return(0);
+	ft_printf("Stack organized\n");
+	return(1);
 }
 

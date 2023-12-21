@@ -6,65 +6,11 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:06:07 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/20 18:32:29 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/21 19:53:16 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*int	main(int argc, char *argv[])
-{
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
-	stack_a = NULL;
-	stack_b = NULL;
-	
-	int i = 1;
-	while(i < argc)
-	{
-		int value = ft_atoi(argv[i]);
-		add_data(&stack_a, value);
-		i++;
-	}
-	printStack("inicial A", stack_a);
-	printStack("inicial B ", stack_b);
-
-	ft_pa(&stack_a, &stack_b);
-
-	printStack("final A", stack_a);
-	printStack("final B ", stack_b);
-	ft_free(stack_a);
-	ft_free(stack_b);
-	return (0);
-}*/
-
-/*int main()
-{
-	t_stack_node	*stack_a;
-	t_stack_node	*stack_b;
-	stack_a = NULL;
-	stack_b = NULL;
-
-	add_data(&stack_a, 1);
-	add_data(&stack_a, 2);
-	add_data(&stack_a, 3);
-
-	add_data(&stack_b, 5);
-	add_data(&stack_b, 6);
-	add_data(&stack_b, 7);
-
-	printStack("inicial A", stack_a);
-	printStack("inicial B ", stack_b);
-
-	ft_sa(&stack_a);
-	ft_sb(&stack_b);
-
-	printStack("final A", stack_a);
-	printStack("final B ", stack_b);
-	ft_free(stack_a);
-	ft_free(stack_b);
-	return (0);
-}*/
 
 
 /*int main(int argc, char *argv[])
@@ -101,9 +47,9 @@ int main(int argc, char *argv[])
 	t_stack_node	*stack_a;
 	stack_a = NULL;
 
-	int arg = 0;
-	if(argc < 2 || argv[arg][0] == '\0')
-		ft_printf("Error\n");
+	int arg = 1;
+	/*if(argc <= 2 || argv[arg][0] == '\0')
+		ft_printf("Error\n");*/
 	
 	while (arg < argc)
 	{
@@ -120,8 +66,10 @@ int main(int argc, char *argv[])
 	
 	printStack("Inicial A", stack_a);
 	
-	if(!ft_stack_organized(stack_a))
-		ft_sort_all(&stack_a);
+	if (ft_stack_organized(stack_a))
+		return 0;
+	else
+		ft_sort_3(&stack_a);
 
 	printStack("Final A", stack_a);
 	ft_free(stack_a);
