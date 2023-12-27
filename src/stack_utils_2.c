@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_all.c                                         :+:      :+:    :+:   */
+/*   stack_utils_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 17:44:03 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/27 13:09:57 by vradis           ###   ########.fr       */
+/*   Created: 2023/12/27 14:08:37 by vradis            #+#    #+#             */
+/*   Updated: 2023/12/27 19:40:33 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_all(t_stack_node **stack_a)
+/*Function that returns the position of the lowest index*/
+int	ft_lowest_index(t_stack_node **stack)
 {
-	/*t_stack_node	*stack_b;*/
-	int				stack_size_a;
-
-	/*stack_b = NULL; acá inicializamos stackB*/
-	stack_size_a = stack_size(*stack_a);
-	if(stack_size_a == 2)
-		ft_sa(stack_a);
-	else if(stack_size_a == 3)
+	t_stack_node	*ptr;
+	int				low_index;
+	int 			i;
+	
+	low_index = 0;
+	i = 1;
+	ptr = *stack;
+	while (ptr != NULL)
 	{
-		ft_printf("AAAAA");
-		ft_sort_3(stack_a);
+		if(ptr->index < (*stack)->index)
+		{
+			(*stack)->index = ptr->index; //se actualiza
+			low_index = i;
+		}
+		ptr = ptr->next;
+		i++;
 	}
+	return(low_index);
 }
+

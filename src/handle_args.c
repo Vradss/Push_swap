@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/20 18:02:38 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/27 12:22:50 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ void	ft_handle_parsing(char *str, t_stack_node **stack_a)
 	ft_node_index(stack_a, data);
 	if (*ptr != '\0')
 		ft_handle_parsing(ptr, stack_a);
-		return;
+	return;
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_actions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:26:11 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/21 19:51:44 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/27 13:20:11 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,20 @@
 /*Function swap top 2 numbers in Stack A*/
 void	ft_sa(t_stack_node **stack_a)
 {
-	t_stack_node	*ptr;
+		t_stack_node	*first;
+		t_stack_node	*second;
+
+		first = *stack_a;
+		second = first->next;
+
+		first->next = second->next;
+		second->next = first;
+		*stack_a = second;
+
+		ft_printf("sa\n");
+	
+	
+	/*t_stack_node	*ptr;
 	
 	if (stack_size(*stack_a) >= 2)
 	{
@@ -24,8 +37,7 @@ void	ft_sa(t_stack_node **stack_a)
 		ptr->next = (*stack_a)->next;
 		(*stack_a)->next = ptr;
 		ft_printf("sa\n");
-	}
-	//return(ft_printf("it doesn't work swap a"));
+	}*/
 }
 
 /*Function swap top 2 numbers in Stack B*/

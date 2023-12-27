@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/21 16:29:15 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/27 19:34:56 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,9 @@ void	*add_node_end(t_stack_node **stack, t_stack_node *newnode);
 void	printStack(const char *name, t_stack_node* stack);
 int		ft_stack_organized(t_stack_node *stack);
 void	ft_node_index(t_stack_node	**stack_a, int data);
-
+int		ft_lowest_index(t_stack_node **stack);
+void	ft_rra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index);
+void	ft_ra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index);
 
 /*Actions allowed*/	
 void	ft_sa(t_stack_node **stack_a);
@@ -63,5 +65,7 @@ void	ft_pb(t_stack_node **stack_a, t_stack_node **stack_b);
 /*Sort numbers*/
 void	ft_sort_3(t_stack_node **stack);
 void	ft_sort_all(t_stack_node **stack_a);
+void    ft_sort_10(t_stack_node **stack_a, t_stack_node **stack_b);
+
 
 #endif
