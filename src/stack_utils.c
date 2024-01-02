@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/21 15:43:39 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:32:40 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	stack_size(t_stack_node *stack)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 	if (stack)
 	{
 		while(stack->next != NULL)

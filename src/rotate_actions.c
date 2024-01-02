@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_actions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 11:21:00 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/21 15:41:30 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/12/29 13:31:35 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ element in stack A*/
 void	ft_ra(t_stack_node **stack_a)
 {
 	t_stack_node *ptr;
+	
 	if (stack_size(*stack_a) > 1)
 	{
 		ptr = *stack_a;

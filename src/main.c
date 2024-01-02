@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:06:07 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/27 19:39:22 by vradis           ###   ########.fr       */
+/*   Updated: 2023/12/31 13:29:59 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ int main(int argc, char *argv[])
 	printStack("Inicial A", stack_a);
 	printStack("Inicial B", stack_b);
 	
-	if (!ft_stack_organized(stack_a))
-		ft_sort_10(&stack_a, &stack_b);
+	ft_sort_all(&stack_a);
 
 	printStack("Final A", stack_a);
 	printStack("Final B", stack_b);

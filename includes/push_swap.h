@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:14:44 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/27 19:34:56 by vradis           ###   ########.fr       */
+/*   Updated: 2023/12/31 12:37:28 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ft_pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 /*Sort numbers*/
 void	ft_sort_3(t_stack_node **stack);
-void	ft_sort_all(t_stack_node **stack_a);
 void    ft_sort_10(t_stack_node **stack_a, t_stack_node **stack_b);
+void	ft_sort_all(t_stack_node **stack_a);
 
 
 #endif
