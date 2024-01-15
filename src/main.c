@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:06:07 by vflorez           #+#    #+#             */
-/*   Updated: 2023/12/31 13:29:59 by vradis           ###   ########.fr       */
+/*   Updated: 2024/01/15 11:55:16 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@
 int main(int argc, char *argv[])
 {
 	t_stack_node	*stack_a = NULL;
-	t_stack_node	*stack_b = NULL;
+	//t_stack_node	*stack_b = NULL;
 
 
 	int arg = 1;
@@ -66,13 +66,13 @@ int main(int argc, char *argv[])
 	}
 	
 	printStack("Inicial A", stack_a);
-	printStack("Inicial B", stack_b);
+	//printStack("Inicial B", stack_b);
 	
-	ft_sort_all(&stack_a);
+	ft_rra(&stack_a);
+	//ft_sort_all(&stack_a);
 
 	printStack("Final A", stack_a);
-	printStack("Final B", stack_b);
 	ft_free(stack_a);
-	ft_free(stack_b);
+	//ft_free(stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/31 13:32:40 by vradis           ###   ########.fr       */
+/*   Updated: 2024/01/15 12:00:18 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,17 @@ void	*add_node_end(t_stack_node **stack, t_stack_node *newnode)
 	ptr = *stack;
 	
 	if (*stack == NULL)
+	{
 		*stack = newnode;
+		return newnode;
+	}
 	else
 	{
 		while(ptr->next != NULL)
 			ptr = ptr->next;
 		ptr->next = newnode;
+		return newnode;
 	}
-	return (newnode);
 }
 
 
@@ -128,7 +131,6 @@ int	ft_stack_organized(t_stack_node *stack)
 	{
 		if(ptr->next != NULL && ptr->index > ptr->next->index)
 		{
-			ft_printf("Stack is not organized\n");
 			return (0);
 		}
 		ptr = ptr->next;

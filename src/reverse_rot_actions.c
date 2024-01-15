@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:26:44 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/17 12:22:12 by vradis           ###   ########.fr       */
+/*   Updated: 2024/01/15 11:52:36 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,6 @@ void    ft_rra(t_stack_node **stack_a)
         ptr->next = *stack_a; //ultimo nodo apunta al primero
         *stack_a = ptr;
         ft_printf("rra\n");
-    }
-    else
-    {
-        ft_printf("Not enough nodes to apply rra\n");
     }
 }
 
