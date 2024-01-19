@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:37:41 by vradis            #+#    #+#             */
-/*   Updated: 2023/12/18 19:31:21 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/01/15 17:37:30 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_pa(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node    *ptr;
 
-	if (stack_size(*stack_b) >= 1)
+	if (stack_size(*stack_b) > 0)
 	{
 		ptr = *stack_b;
 		*stack_b = ptr->next;
@@ -34,7 +34,7 @@ void	ft_pb(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	t_stack_node	*ptr;
 
-	if (stack_size(*stack_a) >= 1)
+	if (stack_size(*stack_a) > 0)
 	{
 		ptr = *stack_a;
 		*stack_a = ptr->next;

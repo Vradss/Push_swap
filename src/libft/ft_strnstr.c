@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 20:13:55 by vflorez           #+#    #+#             */
-/*   Updated: 2023/03/17 09:08:03 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/01/18 18:20:19 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		if (needle[n] == '\0')
 			return ((char *)&haystack[h - n]);
 		h = h - n + 1;
-	}					
+	}
 	return (0);
 }
