@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2024/01/16 18:49:07 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/25 18:09:54 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 /*Function that calculates the stack length*/
 int	stack_size(t_stack_node *stack)
 {
-	int len;
+	int	len;
 
 	len = 1;
 	if (stack)
 	{
-		while(stack->next != NULL)
+		while (stack->next != NULL)
 		{
 			len++;
 			stack = stack->next;
-
 		}
 		return (len);
 	}
@@ -36,8 +35,8 @@ int	stack_size(t_stack_node *stack)
 /*Add node at the end of the stack*/
 void	add_node_end(t_stack_node **stack, t_stack_node *newnode)
 {
-	t_stack_node *ptr;
-	
+	t_stack_node	*ptr;
+
 	ptr = *stack;
 	if (*stack == NULL)
 	{
@@ -46,30 +45,30 @@ void	add_node_end(t_stack_node **stack, t_stack_node *newnode)
 	}
 	else
 	{
-		while(ptr->next != NULL)
+		while (ptr->next != NULL)
 			ptr = ptr->next;
 		ptr->next = newnode;
 	}
 }
 
-
 /*Function that prints stacks*/
-void	printStack(const char *name, t_stack_node* stack) 
+void	printStack(const char* name, t_stack_node *stack) 
 {
 	ft_printf("Stack %s: ", name);
-	while (stack != NULL) {
+	while (stack != NULL)
+	{
 		ft_printf("%d -> ", stack->data);
 		stack = stack->next;
 	}
 	ft_printf("NULL\n");
 }
 
-
 /*Function creates a new node to add in stack and 
 initialize the alias index in 1 */
 t_stack_node	*add_newnode(t_stack_node *stack_a, int data)
 {
 	t_stack_node	*newnode;
+
 	newnode = malloc(sizeof(t_stack_node));
 	if (newnode == NULL)
 	{
@@ -86,26 +85,25 @@ t_stack_node	*add_newnode(t_stack_node *stack_a, int data)
 1. Create a newnode
 2. Create the alias index in each node or data and it will help
 to organize the stack */
-
 void	ft_node_index(t_stack_node	**stack_a, int data)
 {
 	t_stack_node	*newnode;
 	t_stack_node	*ptr;
 
 	newnode = add_newnode(*stack_a, data);
-	if(*stack_a == NULL)
+	if (*stack_a == NULL)
 		*stack_a = newnode;
 	else
 	{
 		ptr = *stack_a;
-		if(ptr->data > newnode->data)
+		if (ptr->data > newnode->data)
 			ptr->index++;
 		else
 			newnode->index++;
-		while(ptr->next != NULL)
+		while (ptr->next != NULL)
 		{
 			ptr = ptr->next;
-			if(ptr->data > newnode->data)
+			if (ptr->data > newnode->data)
 				ptr->index++;
 			else
 				newnode->index++;
@@ -113,7 +111,6 @@ void	ft_node_index(t_stack_node	**stack_a, int data)
 		ptr->next = newnode;
 	}
 }
-
 
 /*Function that checks if the numbers in the stack are organized
 from smallest to largest
@@ -125,14 +122,13 @@ int	ft_stack_organized(t_stack_node *stack)
 	t_stack_node	*ptr;
 
 	ptr = stack;
-	while(ptr != NULL)
+	while (ptr != NULL)
 	{
-		if(ptr->next != NULL && ptr->index > ptr->next->index)
+		if (ptr->next != NULL && ptr->index > ptr->next->index)
 		{
 			return (0);
 		}
 		ptr = ptr->next;
 	}
-	return(1);
+	return (1);
 }
-

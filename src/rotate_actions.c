@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_actions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 11:21:00 by vradis            #+#    #+#             */
-/*   Updated: 2024/01/15 11:47:59 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/25 15:53:45 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /*Function which the first element becomes the last
 element in stack A*/
-void ft_ra(t_stack_node **stack_a)
+void	ft_ra(t_stack_node **stack_a)
 {
-	t_stack_node *ptr;
+	t_stack_node	*ptr;
 
 	if (stack_size(*stack_a) > 1)
 	{
@@ -30,9 +30,10 @@ void ft_ra(t_stack_node **stack_a)
 
 /*Function which the first element becomes the last
 element in stack B*/
-void ft_rb(t_stack_node **stack_b)
+void	ft_rb(t_stack_node **stack_b)
 {
-	t_stack_node *ptr;
+	t_stack_node	*ptr;
+
 	if (stack_size(*stack_b) > 1)
 	{
 		ptr = *stack_b;
@@ -44,7 +45,7 @@ void ft_rb(t_stack_node **stack_b)
 }
 
 /*Function that runs ft_ra and ft_rb at the same time*/
-void ft_rr(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ft_rr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	ft_ra(stack_a);
 	ft_rb(stack_b);

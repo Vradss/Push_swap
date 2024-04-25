@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:26:44 by vradis            #+#    #+#             */
-/*   Updated: 2024/01/19 16:53:08 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/25 15:51:42 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,15 @@ void	ft_rra(t_stack_node **stack_a)
 
 	ptr = *stack_a;
 	lastnode = NULL;
-
 	if (stack_size(*stack_a) > 1)
 	{
-		while(ptr->next != NULL)
+		while (ptr->next != NULL)
 		{
 			lastnode = ptr;
 			ptr = ptr->next;
 		}
-		lastnode->next = NULL; //penultimo nodo apunta NULL
-		ptr->next = *stack_a; //ultimo nodo apunta al primero
+		lastnode->next = NULL;
+		ptr->next = *stack_a;
 		*stack_a = ptr;
 		ft_printf("rra\n");
 	}
@@ -38,15 +37,13 @@ void	ft_rra(t_stack_node **stack_a)
 
 /*Function which the last element becomes the first
 element in stack B*/
-
 void	ft_rrb(t_stack_node **stack_b)
 {
-	t_stack_node    *ptr;
-	t_stack_node    *lastnode;
+	t_stack_node	*ptr;
+	t_stack_node	*lastnode;
 
 	ptr = *stack_b;
 	lastnode = NULL;
-	
 	if (stack_size(*stack_b) > 1)
 	{
 		while (ptr->next != NULL)
@@ -54,8 +51,8 @@ void	ft_rrb(t_stack_node **stack_b)
 			lastnode = ptr;
 			ptr = ptr->next;
 		}
-		lastnode->next = NULL; //penultimo nodo apunta NULL
-		ptr->next = *stack_b; //ultimo nodo apunta al primero
+		lastnode->next = NULL;
+		ptr->next = *stack_b;
 		*stack_b = ptr;
 		ft_printf("rra\n");
 	}

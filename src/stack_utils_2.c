@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:08:37 by vradis            #+#    #+#             */
-/*   Updated: 2024/01/19 13:53:42 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/25 12:45:33 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_highest_index(t_stack_node **stack)
 	high_data = (*stack)->index;
 	while (ptr != NULL)
 	{
-		if (ptr->index < high_data)
+		if (ptr->index > high_data)
 		{
 			high_data = ptr->index;
 			high_index = i;

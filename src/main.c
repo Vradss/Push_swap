@@ -6,19 +6,19 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:06:07 by vflorez           #+#    #+#             */
-/*   Updated: 2024/01/18 17:01:21 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/25 18:12:13 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_stack_node	*stack_a = NULL;
+	t_stack_node	*stack_a;
 
+	stack_a = NULL;
 	int arg = 1;
-	if(argc == 1 || argv[arg][0] == '\0')
+	if (argc == 1 || argv[arg][0] == '\0')
 		ft_printf("Error\n");
 	
 	while (arg < argc)
@@ -36,8 +36,7 @@ int main(int argc, char *argv[])
 	if (!ft_stack_organized(stack_a))
 		ft_sort_all(&stack_a);
 	
-	printStack("Final A", stack_a);
+	//printStack("Final A", stack_a);
 	ft_free(stack_a);
-
 	return (0);
 }

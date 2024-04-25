@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2024/01/19 16:04:19 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/25 18:09:59 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	check_duplicate(t_stack_node **stack)
 	newnode = *stack;
 	if (check_limits(stack) != 1 || newnode == NULL)
 		return (0);
-	duplicate = newnode->next;
 	while (newnode != NULL)
 	{
+		duplicate = newnode->next;
 		while (duplicate != NULL)
 		{
 			if (newnode->data == duplicate->data)
@@ -70,17 +70,18 @@ int	check_str(char *str)
 	}
 	return (1);
 }
-// void	ft_handle_parsing(char *str, t_stack_node **stack_a)
-// {
-// 	char	*ptr;
-// 	int		data;
 
-// 	ptr = str;
-// 	data = ft_atoi(str);
-// 	check_limits(stack_a);
-// 	check_duplicate(stack_a);
-// 	ft_node_index(stack_a, data);
-// 	if (*ptr != '\0')
-// 		ft_handle_parsing(ptr + 1, stack_a);
-// 	return;
-// }
+void	ft_handle_parsing(char *str, t_stack_node **stack_a)
+{
+	char	*ptr;
+	int		data;
+
+	ptr = str;
+	data = ft_atoi(str);
+	check_limits(stack_a);
+	check_duplicate(stack_a);
+	ft_node_index(stack_a, data);
+	if (*ptr != '\0')
+		ft_handle_parsing(ptr + 1, stack_a);
+	return ;
+}
