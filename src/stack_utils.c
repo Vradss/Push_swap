@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/25 18:09:54 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:48:29 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Printf/ft_printf.h"
 
 /*Function that calculates the stack length*/
-int	stack_size(t_stack_node *stack)
+int	stack_size(t_stack *stack)
 {
 	int	len;
 
@@ -29,13 +29,12 @@ int	stack_size(t_stack_node *stack)
 		return (len);
 	}
 	return (0);
-	printf("Error al calcular stack_size");
 }
 
 /*Add node at the end of the stack*/
-void	add_node_end(t_stack_node **stack, t_stack_node *newnode)
+void	add_node_end(t_stack **stack, t_stack *newnode)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = *stack;
 	if (*stack == NULL)
@@ -51,25 +50,13 @@ void	add_node_end(t_stack_node **stack, t_stack_node *newnode)
 	}
 }
 
-/*Function that prints stacks*/
-void	printStack(const char* name, t_stack_node *stack) 
-{
-	ft_printf("Stack %s: ", name);
-	while (stack != NULL)
-	{
-		ft_printf("%d -> ", stack->data);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
-}
-
 /*Function creates a new node to add in stack and 
 initialize the alias index in 1 */
-t_stack_node	*add_newnode(t_stack_node *stack_a, int data)
+t_stack	*add_newnode(t_stack *stack_a, int data)
 {
-	t_stack_node	*newnode;
+	t_stack	*newnode;
 
-	newnode = malloc(sizeof(t_stack_node));
+	newnode = malloc(sizeof(t_stack));
 	if (newnode == NULL)
 	{
 		ft_free(stack_a);
@@ -85,10 +72,10 @@ t_stack_node	*add_newnode(t_stack_node *stack_a, int data)
 1. Create a newnode
 2. Create the alias index in each node or data and it will help
 to organize the stack */
-void	ft_node_index(t_stack_node	**stack_a, int data)
+void	ft_node_index(t_stack	**stack_a, int data)
 {
-	t_stack_node	*newnode;
-	t_stack_node	*ptr;
+	t_stack	*newnode;
+	t_stack	*ptr;
 
 	newnode = add_newnode(*stack_a, data);
 	if (*stack_a == NULL)
@@ -117,9 +104,9 @@ from smallest to largest
 Return 1 = Organized
 Return 0 = Not Organized*/
 
-int	ft_stack_organized(t_stack_node *stack)
+int	ft_stack_organized(t_stack *stack)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	ptr = stack;
 	while (ptr != NULL)

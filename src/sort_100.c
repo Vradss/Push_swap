@@ -6,7 +6,7 @@
 /*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:19:33 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/26 17:13:47 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /*This function counts how many elements in stack_a
 have an index equal to or less than limit_data*/
-int	ft_data_limit(t_stack_node **stack_a, int limit_data)
+int	ft_data_limit(t_stack **stack_a, int limit_data)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 	int				i;
 
 	ptr = *stack_a;
@@ -32,7 +32,7 @@ int	ft_data_limit(t_stack_node **stack_a, int limit_data)
 
 /*This function pushes a chunk of elements of stack_a to stack_b
 based on data_limit*/
-void	ft_pb_chunk(t_stack_node **stack_a, t_stack_node **stack_b, int data)
+void	ft_pb_chunk(t_stack **stack_a, t_stack **stack_b, int data)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ void	ft_pb_chunk(t_stack_node **stack_a, t_stack_node **stack_b, int data)
 	}
 }
 
-void	ft_rb_pa(t_stack_node **stack_a, t_stack_node **stack_b, int index)
+void	ft_rb_pa(t_stack **stack_a, t_stack **stack_b, int index)
 {
 	while (index > 1)
 	{
@@ -59,7 +59,7 @@ void	ft_rb_pa(t_stack_node **stack_a, t_stack_node **stack_b, int index)
 	ft_pa(stack_a, stack_b);
 }
 
-void	ft_rrb_pa(t_stack_node **stack_a, t_stack_node **stack_b, int index)
+void	ft_rrb_pa(t_stack **stack_a, t_stack **stack_b, int index)
 {
 	while (index <= stack_size(*stack_b))
 	{
@@ -69,7 +69,7 @@ void	ft_rrb_pa(t_stack_node **stack_a, t_stack_node **stack_b, int index)
 	ft_pa(stack_a, stack_b);
 }
 
-void	ft_sort_100(t_stack_node **stack_a, t_stack_node **stack_b, int high_data)
+void	ft_sort_100(t_stack **stack_a, t_stack **stack_b, int high_data)
 {
 	int	chunk;
 	int	high_index;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+         #
+#    By: vradis <vradis@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 17:28:00 by vflorez           #+#    #+#              #
-#    Updated: 2024/01/19 16:06:27 by vflorez          ###   ########.fr        #
+#    Updated: 2024/04/27 18:57:32 by vradis           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRC_FILES = src/swap_actions.c\
 			src/sort_all.c\
 			src/stack_utils_2.c\
 			src/sort_10.c\
-			src/sort_100.c 
+			src/sort_100.c\
+			src/sort_500.c\
 	
 LIBFT = $(SRC_DIR)/libft
 PRINTF = $(SRC_DIR)/Printf

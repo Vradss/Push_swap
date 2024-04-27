@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_actions.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 10:37:41 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/25 15:49:46 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 /*Function that take the first element at the top of 
 stack B and put it at the top of stack A*/
-void	ft_pa(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	if (stack_size(*stack_b) > 0)
 	{
@@ -30,9 +30,9 @@ void	ft_pa(t_stack_node **stack_a, t_stack_node **stack_b)
 
 /*Function that take the first element at the top of 
 stack A and put it at the top of stack B*/
-void	ft_pb(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 
 	if (stack_size(*stack_a) > 0)
 	{

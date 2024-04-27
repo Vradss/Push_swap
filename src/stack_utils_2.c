@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:08:37 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/25 12:45:33 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Function that returns the position of the lowest index*/
-int	ft_lowest_index(t_stack_node **stack)
+int	ft_lowest_index(t_stack **stack)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 	int				low_index;
 	int				low_data;
 	int				i;
@@ -38,9 +38,9 @@ int	ft_lowest_index(t_stack_node **stack)
 }
 
 /*Function that returns the position of the highest index*/
-int	ft_highest_index(t_stack_node **stack)
+int	ft_highest_index(t_stack **stack)
 {
-	t_stack_node	*ptr;
+	t_stack	*ptr;
 	int				high_index;
 	int				high_data;
 	int				i;

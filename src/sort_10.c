@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_10.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 18:13:55 by vradis            #+#    #+#             */
-/*   Updated: 2024/01/19 16:21:13 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Function which the first element becomes the last 
 element in stack A and push it to Stack B*/
-void	ft_ra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index)
+void	ft_ra_pb(t_stack **stack_a, t_stack **stack_b, int index)
 {
 	while (index > 1)
 	{
@@ -26,7 +26,7 @@ void	ft_ra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index)
 
 /*Function which the bottom element becomes the first
 element in stack A and push it to Stack B*/
-void	ft_rra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index)
+void	ft_rra_pb(t_stack **stack_a, t_stack **stack_b, int index)
 {
 	while (index <= stack_size(*stack_a))
 	{
@@ -36,7 +36,7 @@ void	ft_rra_pb(t_stack_node **stack_a, t_stack_node **stack_b, int index)
 	ft_pb (stack_a, stack_b);
 }
 
-void	ft_sort_10(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ft_sort_10(t_stack **stack_a, t_stack **stack_b)
 {
 	int	index;
 

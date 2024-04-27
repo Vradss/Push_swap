@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 10:56:19 by vflorez           #+#    #+#             */
-/*   Updated: 2024/01/16 16:17:24 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_3(t_stack_node **stack)
+void	ft_sort_3(t_stack **stack)
 {
 	int	top;
 	int	middle;

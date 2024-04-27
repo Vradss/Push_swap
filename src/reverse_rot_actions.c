@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rot_actions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:26:44 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/25 15:51:42 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 /*Function which the last element becomes the first
 element in stack A*/
-void	ft_rra(t_stack_node **stack_a)
+void	ft_rra(t_stack **stack_a)
 {
-	t_stack_node	*ptr;
-	t_stack_node	*lastnode;
+	t_stack	*ptr;
+	t_stack	*lastnode;
 
 	ptr = *stack_a;
 	lastnode = NULL;
@@ -37,10 +37,10 @@ void	ft_rra(t_stack_node **stack_a)
 
 /*Function which the last element becomes the first
 element in stack B*/
-void	ft_rrb(t_stack_node **stack_b)
+void	ft_rrb(t_stack **stack_b)
 {
-	t_stack_node	*ptr;
-	t_stack_node	*lastnode;
+	t_stack	*ptr;
+	t_stack	*lastnode;
 
 	ptr = *stack_b;
 	lastnode = NULL;
@@ -59,7 +59,7 @@ void	ft_rrb(t_stack_node **stack_b)
 }
 
 /*Function that runs rra & rrb at the same time*/
-void	ft_rrr(t_stack_node **stack_a, t_stack_node **stack_b)
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_rra(stack_a);
 	ft_rrb(stack_b);

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/25 18:09:59 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/27 19:04:07 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*Function checks data int_limits */
-int	check_limits(t_stack_node **stack)
+int	check_limits(t_stack **stack)
 {
-	t_stack_node	*newnode;
+	t_stack	*newnode;
 
 	newnode = *stack;
 	while (newnode != NULL)
 	{
-		if (newnode->data > 2147483647 || newnode->data < -2147483648)
+		if (newnode->data > INT_MAX || newnode->data < INT_MIN)
 		{
-			return (ft_printf("Error with limits\n"), 0);
+			return (ft_printf("Error\n"), 0);
 		}
 		newnode = newnode->next;
 	}
@@ -30,10 +30,10 @@ int	check_limits(t_stack_node **stack)
 }
 
 /*Function checks repeat or duplicate data nodes*/
-int	check_duplicate(t_stack_node **stack)
+int	check_duplicate(t_stack **stack)
 {
-	t_stack_node	*newnode;
-	t_stack_node	*duplicate;
+	t_stack	*newnode;
+	t_stack	*duplicate;
 
 	newnode = *stack;
 	if (check_limits(stack) != 1 || newnode == NULL)
@@ -45,7 +45,7 @@ int	check_duplicate(t_stack_node **stack)
 		{
 			if (newnode->data == duplicate->data)
 			{
-				return (ft_printf("Error with duplicates\n"), 0);
+				return (ft_printf("Error\n"), 0);
 			}
 			duplicate = duplicate->next;
 		}
@@ -71,7 +71,7 @@ int	check_str(char *str)
 	return (1);
 }
 
-void	ft_handle_parsing(char *str, t_stack_node **stack_a)
+void	ft_handle_parsing(char *str, t_stack **stack_a)
 {
 	char	*ptr;
 	int		data;
