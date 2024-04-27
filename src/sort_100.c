@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   sort_100.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:19:33 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/25 17:46:31 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/04/26 17:13:47 by vradis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*This function counts how many elements in stack_a
+have an index equal to or less than limit_data*/
 int	ft_data_limit(t_stack_node **stack_a, int limit_data)
 {
 	t_stack_node	*ptr;
@@ -28,6 +30,8 @@ int	ft_data_limit(t_stack_node **stack_a, int limit_data)
 	return (i);
 }
 
+/*This function pushes a chunk of elements of stack_a to stack_b
+based on data_limit*/
 void	ft_pb_chunk(t_stack_node **stack_a, t_stack_node **stack_b, int data)
 {
 	int	i;
