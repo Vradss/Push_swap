@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 17:44:03 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/27 18:56:39 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/28 12:02:50 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_sort_all(t_stack **stack_a)
 {
-	t_stack	*stack_b;
-	int				stack_size_a;
+	t_stack		*stack_b;
+	int			stack_size_a;
 
 	stack_b = NULL;
 	stack_size_a = stack_size(*stack_a);
@@ -27,6 +27,6 @@ void	ft_sort_all(t_stack **stack_a)
 		ft_sort_10(stack_a, &stack_b);
 	if (stack_size_a > 10 && stack_size_a <= 100)
 		ft_sort_100(stack_a, &stack_b, stack_size_a);
-	if (stack_size_a > 101 && stack_size_a <= 500)
+	if (stack_size_a > 100)
 		ft_sort_500(stack_a, &stack_b, stack_size_a);
 }

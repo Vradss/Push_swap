@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_args.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 20:50:18 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/27 19:04:07 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/28 20:08:36 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,17 @@ int	check_str(char *str)
 	return (1);
 }
 
-void	ft_handle_parsing(char *str, t_stack **stack_a)
-{
-	char	*ptr;
-	int		data;
+// void	ft_handle_parsing(char *str, t_stack **stack_a)
+// {
+// 	char	*ptr;
+// 	int		data;
 
-	ptr = str;
-	data = ft_atoi(str);
-	check_limits(stack_a);
-	check_duplicate(stack_a);
-	ft_node_index(stack_a, data);
-	if (*ptr != '\0')
-		ft_handle_parsing(ptr + 1, stack_a);
-	return ;
-}
+// 	ptr = str;
+// 	if (!check_str(ptr))
+// 		return ;
+// 	data = ft_atoi(ptr);
+// 	if (!check_limits(data))
+// 		return ;
+// 	check_duplicate(*stack_a, data);
+// 	ft_node_index(stack_a, data);
+// }

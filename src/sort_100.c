@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_100.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 18:19:33 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/28 10:05:31 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 have an index equal to or less than limit_data*/
 int	ft_data_limit(t_stack **stack_a, int limit_data)
 {
-	t_stack	*ptr;
-	int				i;
+	t_stack		*ptr;
+	int			i;
 
 	ptr = *stack_a;
 	i = 0;

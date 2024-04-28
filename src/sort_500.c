@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_500.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:20:17 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
+/*   Updated: 2024/04/28 10:05:53 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_sort_500(t_stack **stack_a, t_stack **stack_b, int high_data)
 {
-	int chunk;
+	int	chunk;
 	int	high_index;
 	int	low_data;
 
 	(void)stack_b;
 	low_data = 1;
 	chunk = high_data / 11;
-	while(stack_size(*stack_a) > 0)
+	while (stack_size(*stack_a) > 0)
 	{
 		ft_pb_chunk(stack_a, stack_b, low_data);
 		low_data = low_data + chunk;
