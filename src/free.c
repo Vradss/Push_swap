@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 13:02:38 by vflorez           #+#    #+#             */
-/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
+/*   Updated: 2024/05/18 18:59:40 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ void	ft_free(t_stack *stack)
 		free(stack);
 		stack = ptr;
 	}
+}
+
+void	ft_exit(void)
+{
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
 }

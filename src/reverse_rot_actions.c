@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rot_actions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vradis <vradis@student.42.fr>              +#+  +:+       +#+        */
+/*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 13:26:44 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/27 18:39:37 by vradis           ###   ########.fr       */
+/*   Updated: 2024/05/18 13:15:20 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_rrb(t_stack **stack_b)
 		lastnode->next = NULL;
 		ptr->next = *stack_b;
 		*stack_b = ptr;
-		ft_printf("rra\n");
+		ft_printf("rrb\n");
 	}
 }
 

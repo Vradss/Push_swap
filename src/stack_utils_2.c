@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 14:08:37 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/28 10:04:39 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/05/18 19:01:50 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,15 @@ int	ft_highest_index(t_stack **stack)
 		i++;
 	}
 	return (high_index);
+}
+
+void	printstack(const char *name, t_stack *stack)
+{
+	ft_printf("Stack %s: ", name);
+	while (stack != NULL)
+	{
+		ft_printf("%d -> ", stack->data);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
 }

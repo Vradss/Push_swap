@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:28 by vflorez           #+#    #+#             */
-/*   Updated: 2023/03/16 13:15:43 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/05/18 19:03:21 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
+//PS
+int		ft_space(int c);
+int		ft_posneg(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);

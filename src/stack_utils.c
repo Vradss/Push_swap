@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 08:12:33 by vradis            #+#    #+#             */
-/*   Updated: 2024/04/28 20:15:26 by vflorez          ###   ########.fr       */
+/*   Updated: 2024/05/18 13:34:10 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ t_stack	*add_newnode(t_stack *stack_a, int data)
 	if (newnode == NULL)
 	{
 		ft_free(stack_a);
-		ft_printf("Error\n");
+		ft_exit();
 	}
 	newnode->data = data;
 	newnode->index = 1;
